@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Francois+One&family=Inter:wght@400;700&family=Mukta+Malar:wght@300;500&family=Space+Mono&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+:root {
+  --Verydarkblue: hsl(233, 47%, 7%);
+  --Darkdesaturatedblue: hsl(244, 38%, 16%);
+  --Softviolet: hsl(277, 64%, 61%);
+
+  --White: hsl(0, 0%, 100%);
+  --Slightlytransparentwhite: hsla(0, 0%, 100%, 0.75);
+  --Lightlytransparentwhite: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+  z-index: 1;
+  display: block;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Softviolet);
+  opacity: 0.5;
+}
+
+body {
+  background-color: var(--Verydarkblue);
+  font-family: "Inter", sans-serif;
+  color: var(--Slightlytransparentwhite);
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: var(--White);
+  font-weight: 700;
+}
+
+.insikt {
+  color: var(--Softviolet);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin: 20px;
+  background-color: var(--Darkdesaturatedblue);
+  border-radius: 0.5rem;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.texth1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.stats {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.stats > p {
+  margin-top: 5px;
+  color: var(--Lightlytransparentwhite);
+  margin-bottom: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--White);
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+
+  img {
+    grid-column: 2;
+    height: 100%;
+    width: auto;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .overlay {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
